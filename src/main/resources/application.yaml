@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: catalog_freshnesecom
+  jpa:
+    show-sql: true
+    hibernate:
+#      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    password: 899612qaz
+    username: postgres
+
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    password: 899612qaz
+    user: postgres
+#    clear-checksums: true
+    drop-first: true
+logging:
+  level:
+    liquibase: debug
+
+
+server:
+  port: 8080
+
