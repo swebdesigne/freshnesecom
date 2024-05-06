@@ -1,0 +1,9 @@
+<!-- app-category.component.html -->
+<li class="menu__item">
+    <a class="menu__link" [routerLink]="['/category', category.id]">{{ category.name }}</a>
+    <button class="menu__arrow _icon-arrow" type="button" ></button>
+    <ul class="menu__sub-list" *ngIf="category.children && category.children.length > 0 ">
+      <app-category *ngFor="let child of category.children" [category]="child"></app-category>
+    </ul>
+ </li>
+  

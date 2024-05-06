@@ -1,0 +1,127 @@
+<main class="page">
+	<app-bread-crumbs [categoryId]="product?.categoryId" [directive]="'category'"></app-bread-crumbs> 
+	<div class="page__section details">
+		<div class="details__gallery details-gallery" data-da=".details-content,992,2">
+			<div class="details-gallery__gallery _gallery">
+				<a class="details-gallery__img _ibg" href="../../assets/img/bg.jpg"><picture><source srcset="../../assets/img/bg.webp" type="image/webp"><img src="../../assets/img/bg.jpg" alt="image"></picture></a>
+				<a class="details-gallery__img _ibg" href="../../assets/img/img1.jpg"><picture><source srcset="../../assets/img/img1.webp" type="image/webp"><img src="../../assets/img/img1.jpg" alt="image"></picture></a>
+				<a class="details-gallery__img _ibg" href="../../assets/img/img2.jpg"><picture><source srcset="../../assets/img/img2.webp" type="image/webp"><img src="../../assets/img/img2.jpg" alt="image"></picture></a>
+			</div>
+			<div class="details-gallery__tags tags" data-da=".details-content,992,2">
+				<div class="details-gallery__tag tag tag_normal tag_green">- 36 %</div>
+				<div class="details-gallery__tag tag tag_normal tag_green">Free shipping</div>
+			</div>
+		</div>
+		<div class="details__content details-content">
+			<div class="details-content__title title-32">{{product?.name}}</div>
+			<div class="details-content__rating details-rating">
+				<div class="details-rating__rating simple-rating">
+					<div class="simple-rating__item _active" data-rate="1"></div>
+					<div class="simple-rating__item _active" data-rate="2"></div>
+					<div class="simple-rating__item _active" data-rate="3"></div>
+					<div class="simple-rating__item _active _current-active" data-rate="4"></div>
+					<div class="simple-rating__item" data-rate="5"></div>
+				</div>
+				<div class="details-rating__review">(<a href="#">1 customer review</a>)</div>
+			</div>
+			<div class="details-content__description">{{ product?.description }}</div>
+			<div class="details-content__info details-info">
+				<div class="details-info__parameter" *ngFor="let param of parameters">
+					<div class="details-info__name">{{param?.name}}:</div>
+					<div class="details-info__value">{{param?.value}}</div>
+				</div>
+			</div>
+			<div class="details-content__actions details-actions">
+				<div class="details-actions__add-section">
+					<div class="details-actions__price-info">
+						<div class="details-actions__price">{{product?.price}} <span class="details-actions__currency">USD</span></div>
+						<div class="details-actions__old-price">48.56</div>
+					</div>
+					<div class="details-actions__qty qty qty_big">
+						<input class="qty__input _digital" type="text" name="form[]" data-value="1" data-error="" autocomplete="off">
+						<div class="qty__selector">
+							<div class="qty__title _icon-arrow">Pcs</div>
+							<div class="qty__items" hidden>
+								<div class="qty__item" data-qty="1">1</div>
+								<div class="qty__item" data-qty="2">2</div>
+								<div class="qty__item" data-qty="3">3</div>
+								<div class="qty__item" data-qty="4">4</div>
+								<div class="qty__item" data-qty="5">5</div>
+								<div class="qty__item" data-qty="6">6</div>
+							</div>
+						</div>
+					</div>
+					<div class="details-actions__add btn btn_normal btn_green btn_plus">Add to cart</div>
+				</div>
+				<div class="details-actions__buttons">
+					<div class="details-actions__button detail-wish" data-checkbox>
+						<input class="detail-wish__input" type="checkbox" name="wish">
+						<svg class="detail-wish__img" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M9.54078 2.99411C10.1773 2.35759 11.0406 2 11.9408 2C12.841 2 13.7043 2.35759 14.3408 2.99411C14.9773 3.63063 15.3349 4.49394 15.3349 5.39411C15.3349 6.29429 14.9773 7.15759 14.3408 7.79411L13.4674 8.66744L8.66745 13.4674L3.86745 8.66744L2.99411 7.79411C2.35759 7.15759 2 6.29429 2 5.39411C2 4.49394 2.35759 3.63063 2.99411 2.99411C3.63063 2.35759 4.49394 2 5.39411 2C6.29429 2 7.15759 2.35759 7.79411 2.99411L8.66745 3.86745L9.54078 2.99411Z" stroke="#E6704B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span class="detail-wish__text">Add to wish list</span>
+					</div>
+					<div class="details-actions__button detail-compare">
+						<svg class="detail-compare__img" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7.16211 1.83331H4.49544C3.75906 1.83331 3.16211 2.43027 3.16211 3.16665V5.83331C3.16211 6.56969 3.75906 7.16665 4.49544 7.16665H7.16211C7.89849 7.16665 8.49544 6.56969 8.49544 5.83331V3.16665C8.49544 2.43027 7.89849 1.83331 7.16211 1.83331Z" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M7.16211 9.83331H4.49544C3.75906 9.83331 3.16211 10.4303 3.16211 11.1666V13.8333C3.16211 14.5697 3.75906 15.1666 4.49544 15.1666H7.16211C7.89849 15.1666 8.49544 14.5697 8.49544 13.8333V11.1666C8.49544 10.4303 7.89849 9.83331 7.16211 9.83331Z" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M14.4961 11.1665H10.4961" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M13.1628 13.8333H10.4961" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M13.1628 5.83331H10.4961" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M14.4961 3.16647H10.4961" stroke="#E6704B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span class="detail-compare__text">Compare</span>
+					</div>
+				</div>
+			</div>
+			<div class="details-content__tabs details-tabs _tabs">
+				<div class="details-tabs__items">
+					<div class="details-tabs__item _tab-item _active">
+						<span>Description</span>
+					</div>
+					<div class="details-tabs__item _tab-item">
+						<span>Reviews</span>
+						<div class="details-tabs__tag tag tag_normal tag_green">18</div>
+					</div>
+					<div class="details-tabs__item _tab-item">
+						<span>Questions</span>
+						<div class="details-tabs__tag tag tag_normal tag_green">4</div>
+					</div>
+				</div>
+				<div class="details-tabs__blocks">
+					<div class="details-tabs__block details-description _tab-block _active">
+						<div class="details-description__title title-15">Origins</div>
+						<div class="details-description__text">{{product?.recipe.description}}</div>
+						<div class="details-description__title title-15">How to cook</div>
+						<div class="details-description__text">From roasts, salads and soups to casseroles and cakes, Carrots will lend sweetness, texture and colour to an enormous number of recipes.</div>
+						<div class="details-description__title title-15">Full of Vitamins!</div>
+						<table class="details-description__table table" *ngIf="product && product.recipe && product.recipe.ingredient.length > 0">
+							<thead>
+								<tr>
+									<th>Vitamins</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let ingredient of product.recipe.ingredient">
+									<td>{{ingredient?.name}}</td>
+									<td>{{ingredient?.id}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="details-tabs__block _tab-block">
+						<div class="details-description__title title-15">Lorem, ipsum.</div>
+						<div class="details-description__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur dignissimos quos dolore amet debitis, velit a rerum magni ad. Ipsa earum ullam accusamus asperiores iure delectus porro quidem dolorum distinctio provident corrupti quam deleniti voluptatem expedita libero fugiat cupiditate modi, quae, animi tempora quo officia repudiandae. Excepturi dolore nihil officiis!</div>
+						<div class="details-description__title title-15">Lorem ipsum dolor sit amet.</div>
+						<div class="details-description__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel adipisci doloremque accusamus dolorem, dolores corrupti ex esse minima id perferendis.</div>
+					</div>
+					<div class="details-tabs__block _tab-block">
+						<div class="title title-15">No template</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<app-product-related></app-product-related>
+</main>

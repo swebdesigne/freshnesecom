@@ -1,0 +1,24 @@
+<div class="page__section page-bottomline" *ngIf="count > 0" >
+    <div class="page-bottomline__pagination">
+        <div class="pagination">
+            <span class="pagination__label">Page:</span>
+            <ul class="pagination__list">
+                <li class="pagination__item" *ngFor="let pageNumber of size; let in = index">
+                    <a class="pagination__link" 
+                    [ngClass]="{ 'pagination-link-active': pageNumber === activeElement }"
+                    [routerLink]="['/category', categoryId]" 
+                    [queryParams]="{ page: pageNumber + 1}">
+                    {{ pageNumber + 1 }}
+                    </a>
+                  </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-bottomline__more" *ngIf="isShowMore">
+        <a class="page-bottomline__show-more btn btn_normal btn_green btn_down" href="#">Show more products</a>
+    </div>
+    <div class="page-bottomline__items-qty" *ngIf="length && length > 0">
+        <div class="page-bottomline__tag tag tag_normal tag_green">{{length}}</div>
+        <span>Products</span>
+    </div>
+</div>

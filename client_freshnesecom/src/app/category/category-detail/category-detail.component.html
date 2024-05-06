@@ -1,0 +1,199 @@
+<main class="page">
+    <app-bread-crumbs [categoryId]="category?.id" [directive]="'category'"></app-bread-crumbs> 
+    <div class="page__section aside-section">
+        <div class="aside-section__aside">
+            <form class="aside-filters" action="#" method="get" data-spollers="768,max">
+                <div class="aside-filters__section filter-section">
+                    <button class="filter-section__title title-18" type="button" tabindex="-1" data-spoller>Categories</button>
+                    <div class="filter-section__body category-filter">
+                        <div class="category-filter__item">
+                            <a class="category-filter__category" href="#">Category name</a>
+                            <div class="category-filter__tag tag tag_normal tag_green">320</div>
+                        </div>
+                        <div class="category-filter__item">
+                            <a class="category-filter__category" href="#">Category name</a>
+                            <div class="category-filter__tag tag tag_normal tag_green">112</div>
+                        </div>
+                        <div class="category-filter__item">
+                            <a class="category-filter__category" href="#">Category name</a>
+                            <div class="category-filter__tag tag tag_normal tag_green">32</div>
+                        </div>
+                        <div class="category-filter__item">
+                            <a class="category-filter__category" href="#">Category name</a>
+                            <div class="category-filter__tag tag tag_normal tag_green">40</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-filters__section filter-section">
+                    <button class="filter-section__title title-18" type="button" tabindex="-1" data-spoller>Brands</button>
+                    <div class="filter-section__body brand-filter">
+                        <div class="brand-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="brand[]">
+                            <span class="checkbox__text">Filtre by brand item</span>
+                        </div>
+                        <div class="brand-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="brand[]">
+                            <span class="checkbox__text">Filtre by brand item</span>
+                        </div>
+                        <div class="brand-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="brand[]">
+                            <span class="checkbox__text">Filtre by brand item</span>
+                        </div>
+                        <div class="brand-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="brand[]">
+                            <span class="checkbox__text">Filtre by brand item</span>
+                        </div>
+                        <div class="brand-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="brand[]">
+                            <span class="checkbox__text">Filtre by brand item</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-filters__section filter-section">
+                    <button class="filter-section__title title-18" type="button" tabindex="-1" data-spoller>Rating</button>
+                    <div class="filter-section__body rating-filter">
+                        <div class="rating-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="ratting[]">
+                            <span class="checkbox__text">
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                            </span>
+                        </div>
+                        <div class="rating-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="rating[]">
+                            <span class="checkbox__text">
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star"></span>
+                            </span>
+                        </div>
+                        <div class="rating-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="rating[]">
+                            <span class="checkbox__text">
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                            </span>
+                        </div>
+                        <div class="rating-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="rating[]">
+                            <span class="checkbox__text">
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                            </span>
+                        </div>
+                        <div class="rating-filter__checkbox checkbox" data-checkbox>
+                            <input class="checkbox__input" type="checkbox" name="rating[]">
+                            <span class="checkbox__text">
+                                <span class="_icon-star-fill"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                                <span class="_icon-star"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-filters__section filter-section">
+                    <button class="filter-section__title title-18" type="button" tabindex="-1" data-spoller>Price</button>
+                    <div class="filter-section__body price-filter">
+                        <div class="price-filter__slider"></div>
+                        <div class="price-filter__min-max">
+                            <div class="price-filter__item input-label">
+                                <div class="price-filter__label">Min</div>
+                                <input class="price-filter__input price-filter__input_min input _digital" type="text" name="minPrice" data-value="" data-error="" autocomplete="off">
+                            </div>
+                            <span class="price-filter__spacer">-</span>
+                            <div class="price-filter__item input-label">
+                                <div class="price-filter__label">Max</div>
+                                <input class="price-filter__input price-filter__input_max input _digital" type="text" name="maxPrice" data-value="" data-error="" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-filters__actions">
+                    <button class="aside-filters__apply btn btn_normal btn_green" type="submit">Apply</button>
+                    <a class="aside-filters__reset btn btn_small btn_white" href="#">Reset</a>
+                </div>
+            </form>
+        </div>
+        <div class="aside-section__content">
+            <div *ngIf="category && category.items && category.items.length === 0" id="category_is-empty">
+                Category is empty
+            </div>
+            <app-pagination [count]="category?.countItems" [categoryId]="category?.id" [length]="category?.items.length" [directive]="'category'"></app-pagination>
+            <div class="items-section items-section_line" *ngIf="category && category.items && category.items.length > 0">
+                <div class="items-section__column" *ngFor="let item of category.items">
+                    <div class="items-section__item item item_line">
+                        <a class="item__img _ibg" [routerLink]="['/product', item.id]" routerLinkActive="router-link-active" >
+                            <picture>
+                                <source srcset="../../../assets/img/img{{item.id % 2 == 0 ? 1 : 2}}.webp" type="image/webp">
+                                <img src="../../../assets/img/img{{item.id % 2 == 0 ? 1 : 2}}.jpg" alt="image">
+                            </picture>
+                            <div class="item__tags tags">
+                                <div class="tags__tag tag tag_normal tag_green">- 36 %</div>
+                            </div>
+                        </a>
+                        <div class="item__content">
+                            <div class="item__main item-main">
+                                <a class="item-main__title" [routerLink]="['/product', item.id]" routerLinkActive="router-link-active" >{{item.name}}</a>
+                                <div class="item-main__description">Space for a small product description</div>
+                                <div class="item-main__rating item-rating">
+                                    <div class="item-rating__star item-rating__star_active"></div>
+                                    <div class="item-rating__star item-rating__star_active"></div>
+                                    <div class="item-rating__star item-rating__star_active"></div>
+                                    <div class="item-rating__star item-rating__star_active"></div>
+                                    <div class="item-rating__star"></div>
+                                </div>
+                                <div class="item-main__info item-info">
+                                    <div class="item-info__title">Fresheness</div>
+                                    <div class="item-info__text"><span>New</span> (Extra fresh)</div>
+                                    <div class="item-info__title">Farm</div>
+                                    <div class="item-info__text">Grocery Tarm Fields</div>
+                                    <div class="item-info__title">Delivery</div>
+                                    <div class="item-info__text">Europe</div>
+                                    <div class="item-info__title">Stock</div>
+                                    <div class="item-info__text"><span>320 pcs</span></div>
+                                </div>
+                            </div>
+                            <div class="item__actions item-actions">
+                                <div class="item-actions__buy-section">
+                                    <div class="item-actions__price-info">
+                                        <div class="item-actions__price">{{item.price}} <span class="item-actions__currency">USD</span></div>
+                                        <div class="item-actions__old-price">48.56</div>
+                                    </div>
+                                    <a class="item-actions__buy btn btn_small btn_green" href="#">Buy now</a>
+                                </div>
+                                <div class="item-actions__shipping">
+                                    <div class="item-actions__shipping-title">Free Shipping</div>
+                                    <div class="item-actions__shipping-text">Delivery in 1 day</div>
+                                </div>
+                                <div class="item-actions__buttons">
+                                    <a class="item-actions__btn btn btn_normal btn_green btn_right" href="details.html">Product Detail</a>
+                                    <div class="item-actions__wish wish" data-checkbox>
+                                        <input class="wish__input" type="checkbox" name="wish">
+                                        <svg class="wish__heart" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.54078 2.99411C10.1773 2.35759 11.0406 2 11.9408 2C12.841 2 13.7043 2.35759 14.3408 2.99411C14.9773 3.63063 15.3349 4.49394 15.3349 5.39411C15.3349 6.29429 14.9773 7.15759 14.3408 7.79411L13.4674 8.66744L8.66745 13.4674L3.86745 8.66744L2.99411 7.79411C2.35759 7.15759 2 6.29429 2 5.39411C2 4.49394 2.35759 3.63063 2.99411 2.99411C3.63063 2.35759 4.49394 2 5.39411 2C6.29429 2 7.15759 2.35759 7.79411 2.99411L8.66745 3.86745L9.54078 2.99411Z" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <span class="wish__text">Add to wish list</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-pagination [count]="category?.countItems" [categoryId]="category?.id" [length]="category?.items.length" [directive]="'category'" [isShowMore]="true"></app-pagination>
+        </div>
+    </div>
+</main>

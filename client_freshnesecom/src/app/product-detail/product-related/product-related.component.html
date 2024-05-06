@@ -1,0 +1,57 @@
+<div class="page__section section">
+    <div class="section__headline section-headline">
+        <div class="section-headline__title title-18">Related products</div>
+        <div class="section-headline__btn btn btn_small btn_white btn_right">More products</div>
+    </div>
+    <div class="items-section items-section_grid">
+        <div class="items-section__column" *ngFor="let item of product">
+            <div class="items-section__item item item_grid">
+                <a class="item__img _ibg" [routerLink]="['/product', item?.product?.id]">
+                    <picture>
+                        <source srcset="../../../assets/img/img{{item?.id % 2 == 0 ? 1 : 2}}.webp" type="image/webp">
+                        <img src="../../../assets/img/img{{item?.id % 2 == 0 ? 1 : 2}}.jpg" alt="image">
+                    </picture>                    <div class="item__tags tags">
+                        <div class="item__tag tag tag_normal tag_green">- 36 %</div>
+                    </div>
+                </a>
+                <div class="item__content">
+                    <div class="item__main item-main">
+                        <a class="item-main__title" [routerLink]="['/product', item?.product?.id]" routerLinkActive="router-link-active" >{{item?.product.name}}</a>
+                        <div class="item-main__description">{{item?.product.description}}</div>
+                        <div class="item-main__rating item-rating">
+                            <div class="item-rating__star item-rating__star_active"></div>
+                            <div class="item-rating__star item-rating__star_active"></div>
+                            <div class="item-rating__star item-rating__star_active"></div>
+                            <div class="item-rating__star item-rating__star_active"></div>
+                            <div class="item-rating__star"></div>
+                        </div>
+                        <div class="item-main__info" *ngFor="let param of item?.parameters">
+                            <div class="item-info__text"><span>{{param.name}}</span> {{param.value}}</div>
+                        </div>
+                    </div>
+                    <div class="item__actions item-actions">
+                        <div class="item-actions__buy-section">
+                            <div class="item-actions__price-info">
+                                <div class="item-actions__price">{{item?.price}} <span class="item-actions__currency">USD</span></div>
+                                <div class="item-actions__old-price">48.56</div>
+                            </div>
+                            <a class="item-actions__buy btn btn_small btn_green" href="#">Buy now</a>
+                        </div>
+                        <div class="item-actions__shipping">
+                            <div class="item-actions__shipping-title">Free Shipping</div>
+                            <div class="item-actions__shipping-text">Delivery in 1 day</div>
+                        </div>
+                        <a class="item-actions__btn btn btn_normal btn_green btn_right" href="details.html">Product Detail</a>
+                        <div class="item-actions__wish wish" data-checkbox>
+                            <input class="wish__input" type="checkbox" name="wish">
+                            <svg class="wish__heart" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.54078 2.99411C10.1773 2.35759 11.0406 2 11.9408 2C12.841 2 13.7043 2.35759 14.3408 2.99411C14.9773 3.63063 15.3349 4.49394 15.3349 5.39411C15.3349 6.29429 14.9773 7.15759 14.3408 7.79411L13.4674 8.66744L8.66745 13.4674L3.86745 8.66744L2.99411 7.79411C2.35759 7.15759 2 6.29429 2 5.39411C2 4.49394 2.35759 3.63063 2.99411 2.99411C3.63063 2.35759 4.49394 2 5.39411 2C6.29429 2 7.15759 2.35759 7.79411 2.99411L8.66745 3.86745L9.54078 2.99411Z" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="wish__text">Add to wish list</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

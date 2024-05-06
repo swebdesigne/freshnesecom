@@ -1,0 +1,395 @@
+  <header class="header">
+    <div class="header__top header-top" data-da=".menu__body,768">
+      <div class="header-top__column">
+        <a class="header-top__link" href="#">Chat with us</a>
+        <a class="header-top__link" href="tel:+420336775664">+420 336 775 664</a>
+        <a class="header-top__link" href="mailto:info@freshnesecom.com">info&#64;freshnesecom.com</a>
+      </div>
+      <div class="header-top__column">
+        <a class="header-top__link" href="blogs.html">Blog</a>
+        <a class="header-top__link" href="#">About Us</a>
+        <a class="header-top__link" href="#">Careers</a>
+      </div>
+    </div>
+    <div class="header__middle header-middle">
+      <div class="header-middle__logo">
+        <a [routerLink]="['/']"><picture><source srcset="../../assets/img/logo.svg" type="image/webp"><img src="../../assets/img/logo.svg" alt="logo"></picture></a>
+      </div>
+      <div class="header-middle__search">
+        <form class="searcher" action="#" method="get">
+          <div class="searcher__select">
+            <div class="searcher__title searcher-title _icon-arrow">
+              <span class="searcher-title__text">All categories</span>
+              <span class="searcher-title__qty" data-text="Selected: "></span>
+            </div>
+            <div class="searcher__categories searcher-categories" hidden>
+              <div class="searcher-categories__body">
+                <div class="searcher-categories__column" *ngFor="let cat of category">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="1">
+                    <span class="checkbox__text">{{cat.name}}</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="2">
+                    <span class="checkbox__text">Fruit and vegetables</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="3">
+                    <span class="checkbox__text">Meat and fish</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="4">
+                    <span class="checkbox__text">Drinks</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="5">
+                    <span class="checkbox__text">Kitchen</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="6">
+                    <span class="checkbox__text">Special nutrition</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="7">
+                    <span class="checkbox__text">Baby</span>
+                  </div>
+                </div>
+                <div class="searcher-categories__column">
+                  <div class="searcher-categories__checkbox checkbox" data-checkbox>
+                    <input class="checkbox__input" type="checkbox" name="form[]" value="8">
+                    <span class="checkbox__text">Pharmacy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input class="searcher__input input" type="text" name="form[]" data-value="Search Products, categories ..." autocomplete="off">
+          <button class="searcher__search _icon-search" type="submit"></button>
+        </form>
+      </div>
+      <div class="header-middle__actions header-actions">
+        <a href="#" class="header-actions__search _icon-search"></a>
+        <a href="#" class="header-actions__sing-in _icon-person"></a>
+        <button class="header-actions__cart _icon-cart"><span>4</span></button>
+        <button class="header-actions__icon-menu icon-menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="cart-preview">
+        <div class="cart-preview__headline">
+          <div class="cart-preview__title">Shopping cart</div>
+          <a class="cart-preview__close _icon-remove" href="#">Close</a>
+        </div>
+        <div class="cart-preview__items" data-simplebar>
+          <div class="cart-preview__item cart-item">
+            <div class="cart-item__image-block">
+              <a class="cart-item__img _ibg" href="details.html">
+                <picture><source srcset="../../assets/img/b3.webp" type="image/webp"><img src="../../assets/img/b3.jpg" alt="image"></picture>
+              </a>
+              <div class="cart-item__actions">
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_wish" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" d="M6.65559 1.44501C7.13297 0.967619 7.78045 0.699425 8.45559 0.699425C9.13072 0.699425 9.7782 0.967619 10.2556 1.44501C10.733 1.9224 11.0012 2.56988 11.0012 3.24501C11.0012 3.92014 10.733 4.56762 10.2556 5.04501L9.60059 5.70001L6.00059 9.30001L2.40058 5.70001L1.74558 5.04501C1.26819 4.56762 1 3.92014 1 3.24501C1 2.56988 1.26819 1.9224 1.74558 1.44501C2.22297 0.967619 2.87045 0.699425 3.54558 0.699425C4.22072 0.699425 4.86819 0.967619 5.34558 1.44501L6.00059 2.10001L6.65559 1.44501Z" />
+                  </svg>
+                  <span>Wishlist</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_compare" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 2C2.31135 2 2.16211 2.14924 2.16211 2.33333V5C2.16211 5.18409 2.31135 5.33333 2.49544 5.33333H5.16211C5.3462 5.33333 5.49544 5.18409 5.49544 5V2.33333C5.49544 2.14924 5.3462 2 5.16211 2H2.49544ZM0.162109 2.33333C0.162109 1.04467 1.20678 0 2.49544 0H5.16211C6.45077 0 7.49544 1.04467 7.49544 2.33333V5C7.49544 6.28866 6.45077 7.33333 5.16211 7.33333H2.49544C1.20678 7.33333 0.162109 6.28866 0.162109 5V2.33333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 10C2.31135 10 2.16211 10.1492 2.16211 10.3333V13C2.16211 13.1841 2.31135 13.3333 2.49544 13.3333H5.16211C5.3462 13.3333 5.49544 13.1841 5.49544 13V10.3333C5.49544 10.1492 5.3462 10 5.16211 10H2.49544ZM0.162109 10.3333C0.162109 9.04467 1.20678 8 2.49544 8H5.16211C6.45077 8 7.49544 9.04467 7.49544 10.3333V13C7.49544 14.2887 6.45077 15.3333 5.16211 15.3333H2.49544C1.20678 15.3333 0.162109 14.2887 0.162109 13V10.3333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 10.3332C7.49609 9.78088 7.94381 9.33316 8.49609 9.33316H12.4961C13.0484 9.33316 13.4961 9.78088 13.4961 10.3332C13.4961 10.8854 13.0484 11.3332 12.4961 11.3332H8.49609C7.94381 11.3332 7.49609 10.8854 7.49609 10.3332Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 13C7.49609 12.4477 7.94381 12 8.49609 12H11.1628C11.715 12 12.1628 12.4477 12.1628 13C12.1628 13.5523 11.715 14 11.1628 14H8.49609C7.94381 14 7.49609 13.5523 7.49609 13Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 5C7.49609 4.44772 7.94381 4 8.49609 4H11.1628C11.715 4 12.1628 4.44772 12.1628 5C12.1628 5.55228 11.715 6 11.1628 6H8.49609C7.94381 6 7.49609 5.55228 7.49609 5Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 2.33316C7.49609 1.78088 7.94381 1.33316 8.49609 1.33316H12.4961C13.0484 1.33316 13.4961 1.78088 13.4961 2.33316C13.4961 2.88545 13.0484 3.33316 12.4961 3.33316H8.49609C7.94381 3.33316 7.49609 2.88545 7.49609 2.33316Z" />
+                  </svg>
+                  <span>Compare</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_remove" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M0.466759 0.466454C0.662021 0.271192 0.978604 0.271192 1.17387 0.466454L7.53387 6.82646C7.72913 7.02172 7.72913 7.3383 7.53387 7.53356C7.3386 7.72882 7.02202 7.72882 6.82676 7.53356L0.466759 1.17356C0.271497 0.978298 0.271497 0.661716 0.466759 0.466454Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M7.53387 0.466454C7.72913 0.661716 7.72913 0.978298 7.53387 1.17356L1.17387 7.53356C0.978604 7.72882 0.662021 7.72882 0.466759 7.53356C0.271497 7.3383 0.271497 7.02172 0.466759 6.82646L6.82676 0.466454C7.02202 0.271192 7.3386 0.271192 7.53387 0.466454Z" />
+                  </svg>
+                  <span>Remove</span>
+                </a>
+              </div>
+            </div>
+            <div class="cart-item__main-block">
+              <div class="cart-item__title title-15"><a href="details.html">Product title</a></div>
+              <div class="cart-item__info">
+                <div class="cart-item__info-parameter">Farm:</div>
+                <div class="cart-item__info-value">Tharamis Farm</div>
+                <div class="cart-item__info-parameter">Freshness:</div>
+                <div class="cart-item__info-value">1 day old</div>
+              </div>
+              <div class="cart-item__rating cart-item-rating">
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star"></div>
+              </div>
+            </div>
+            <div class="cart-item__price-block">
+              <div class="cart-item__price-info">
+                <div class="cart-item__price">36.99 <span class="cart-item__currency">USD</span></div>
+                <div class="cart-item__old-price">48.56</div>
+              </div>
+              <div class="cart-item__qty qty qty_normal">
+                <input class="qty__input _digital" type="text" name="form[]" data-value="1" data-error="" autocomplete="off">
+                <div class="qty__selector">
+                  <div class="qty__title _icon-arrow">Pcs</div>
+                  <div class="qty__items" hidden>
+                    <div class="qty__item" data-qty="1">1</div>
+                    <div class="qty__item" data-qty="2">2</div>
+                    <div class="qty__item" data-qty="3">3</div>
+                    <div class="qty__item" data-qty="4">4</div>
+                    <div class="qty__item" data-qty="5">5</div>
+                    <div class="qty__item" data-qty="6">6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-preview__item cart-item">
+            <div class="cart-item__image-block">
+              <a class="cart-item__img _ibg" href="details.html">
+                <picture><source srcset="../../assets/img/img1.webp" type="image/webp"><img src="../../assets/img/img1.jpg" alt="image"></picture>
+              </a>
+              <div class="cart-item__actions">
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_wish" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" d="M6.65559 1.44501C7.13297 0.967619 7.78045 0.699425 8.45559 0.699425C9.13072 0.699425 9.7782 0.967619 10.2556 1.44501C10.733 1.9224 11.0012 2.56988 11.0012 3.24501C11.0012 3.92014 10.733 4.56762 10.2556 5.04501L9.60059 5.70001L6.00059 9.30001L2.40058 5.70001L1.74558 5.04501C1.26819 4.56762 1 3.92014 1 3.24501C1 2.56988 1.26819 1.9224 1.74558 1.44501C2.22297 0.967619 2.87045 0.699425 3.54558 0.699425C4.22072 0.699425 4.86819 0.967619 5.34558 1.44501L6.00059 2.10001L6.65559 1.44501Z" />
+                  </svg>
+                  <span>Wishlist</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_compare" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 2C2.31135 2 2.16211 2.14924 2.16211 2.33333V5C2.16211 5.18409 2.31135 5.33333 2.49544 5.33333H5.16211C5.3462 5.33333 5.49544 5.18409 5.49544 5V2.33333C5.49544 2.14924 5.3462 2 5.16211 2H2.49544ZM0.162109 2.33333C0.162109 1.04467 1.20678 0 2.49544 0H5.16211C6.45077 0 7.49544 1.04467 7.49544 2.33333V5C7.49544 6.28866 6.45077 7.33333 5.16211 7.33333H2.49544C1.20678 7.33333 0.162109 6.28866 0.162109 5V2.33333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 10C2.31135 10 2.16211 10.1492 2.16211 10.3333V13C2.16211 13.1841 2.31135 13.3333 2.49544 13.3333H5.16211C5.3462 13.3333 5.49544 13.1841 5.49544 13V10.3333C5.49544 10.1492 5.3462 10 5.16211 10H2.49544ZM0.162109 10.3333C0.162109 9.04467 1.20678 8 2.49544 8H5.16211C6.45077 8 7.49544 9.04467 7.49544 10.3333V13C7.49544 14.2887 6.45077 15.3333 5.16211 15.3333H2.49544C1.20678 15.3333 0.162109 14.2887 0.162109 13V10.3333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 10.3332C7.49609 9.78088 7.94381 9.33316 8.49609 9.33316H12.4961C13.0484 9.33316 13.4961 9.78088 13.4961 10.3332C13.4961 10.8854 13.0484 11.3332 12.4961 11.3332H8.49609C7.94381 11.3332 7.49609 10.8854 7.49609 10.3332Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 13C7.49609 12.4477 7.94381 12 8.49609 12H11.1628C11.715 12 12.1628 12.4477 12.1628 13C12.1628 13.5523 11.715 14 11.1628 14H8.49609C7.94381 14 7.49609 13.5523 7.49609 13Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 5C7.49609 4.44772 7.94381 4 8.49609 4H11.1628C11.715 4 12.1628 4.44772 12.1628 5C12.1628 5.55228 11.715 6 11.1628 6H8.49609C7.94381 6 7.49609 5.55228 7.49609 5Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 2.33316C7.49609 1.78088 7.94381 1.33316 8.49609 1.33316H12.4961C13.0484 1.33316 13.4961 1.78088 13.4961 2.33316C13.4961 2.88545 13.0484 3.33316 12.4961 3.33316H8.49609C7.94381 3.33316 7.49609 2.88545 7.49609 2.33316Z" />
+                  </svg>
+                  <span>Compare</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_remove" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M0.466759 0.466454C0.662021 0.271192 0.978604 0.271192 1.17387 0.466454L7.53387 6.82646C7.72913 7.02172 7.72913 7.3383 7.53387 7.53356C7.3386 7.72882 7.02202 7.72882 6.82676 7.53356L0.466759 1.17356C0.271497 0.978298 0.271497 0.661716 0.466759 0.466454Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M7.53387 0.466454C7.72913 0.661716 7.72913 0.978298 7.53387 1.17356L1.17387 7.53356C0.978604 7.72882 0.662021 7.72882 0.466759 7.53356C0.271497 7.3383 0.271497 7.02172 0.466759 6.82646L6.82676 0.466454C7.02202 0.271192 7.3386 0.271192 7.53387 0.466454Z" />
+                  </svg>
+                  <span>Remove</span>
+                </a>
+              </div>
+            </div>
+            <div class="cart-item__main-block">
+              <div class="cart-item__title title-15"><a href="details.html">Product title</a></div>
+              <div class="cart-item__info">
+                <div class="cart-item__info-parameter">Farm:</div>
+                <div class="cart-item__info-value">Tharamis Farm</div>
+                <div class="cart-item__info-parameter">Freshness:</div>
+                <div class="cart-item__info-value">1 day old</div>
+              </div>
+              <div class="cart-item__rating cart-item-rating">
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star"></div>
+              </div>
+            </div>
+            <div class="cart-item__price-block">
+              <div class="cart-item__price-info">
+                <div class="cart-item__price">36.99 <span class="cart-item__currency">USD</span></div>
+                <div class="cart-item__old-price">48.56</div>
+              </div>
+              <div class="cart-item__qty qty qty_normal">
+                <input class="qty__input _digital" type="text" name="form[]" data-value="1" data-error="" autocomplete="off">
+                <div class="qty__selector">
+                  <div class="qty__title _icon-arrow">Pcs</div>
+                  <div class="qty__items" hidden>
+                    <div class="qty__item" data-qty="1">1</div>
+                    <div class="qty__item" data-qty="2">2</div>
+                    <div class="qty__item" data-qty="3">3</div>
+                    <div class="qty__item" data-qty="4">4</div>
+                    <div class="qty__item" data-qty="5">5</div>
+                    <div class="qty__item" data-qty="6">6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-preview__item cart-item">
+            <div class="cart-item__image-block">
+              <a class="cart-item__img _ibg" href="details.html">
+                <picture><source srcset="../../assets/img/b5.webp" type="image/webp"><img src="../../assets/img/b5.jpg" alt="image"></picture>
+              </a>
+              <div class="cart-item__actions">
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_wish" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" d="M6.65559 1.44501C7.13297 0.967619 7.78045 0.699425 8.45559 0.699425C9.13072 0.699425 9.7782 0.967619 10.2556 1.44501C10.733 1.9224 11.0012 2.56988 11.0012 3.24501C11.0012 3.92014 10.733 4.56762 10.2556 5.04501L9.60059 5.70001L6.00059 9.30001L2.40058 5.70001L1.74558 5.04501C1.26819 4.56762 1 3.92014 1 3.24501C1 2.56988 1.26819 1.9224 1.74558 1.44501C2.22297 0.967619 2.87045 0.699425 3.54558 0.699425C4.22072 0.699425 4.86819 0.967619 5.34558 1.44501L6.00059 2.10001L6.65559 1.44501Z" />
+                  </svg>
+                  <span>Wishlist</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_compare" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 2C2.31135 2 2.16211 2.14924 2.16211 2.33333V5C2.16211 5.18409 2.31135 5.33333 2.49544 5.33333H5.16211C5.3462 5.33333 5.49544 5.18409 5.49544 5V2.33333C5.49544 2.14924 5.3462 2 5.16211 2H2.49544ZM0.162109 2.33333C0.162109 1.04467 1.20678 0 2.49544 0H5.16211C6.45077 0 7.49544 1.04467 7.49544 2.33333V5C7.49544 6.28866 6.45077 7.33333 5.16211 7.33333H2.49544C1.20678 7.33333 0.162109 6.28866 0.162109 5V2.33333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 10C2.31135 10 2.16211 10.1492 2.16211 10.3333V13C2.16211 13.1841 2.31135 13.3333 2.49544 13.3333H5.16211C5.3462 13.3333 5.49544 13.1841 5.49544 13V10.3333C5.49544 10.1492 5.3462 10 5.16211 10H2.49544ZM0.162109 10.3333C0.162109 9.04467 1.20678 8 2.49544 8H5.16211C6.45077 8 7.49544 9.04467 7.49544 10.3333V13C7.49544 14.2887 6.45077 15.3333 5.16211 15.3333H2.49544C1.20678 15.3333 0.162109 14.2887 0.162109 13V10.3333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 10.3332C7.49609 9.78088 7.94381 9.33316 8.49609 9.33316H12.4961C13.0484 9.33316 13.4961 9.78088 13.4961 10.3332C13.4961 10.8854 13.0484 11.3332 12.4961 11.3332H8.49609C7.94381 11.3332 7.49609 10.8854 7.49609 10.3332Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 13C7.49609 12.4477 7.94381 12 8.49609 12H11.1628C11.715 12 12.1628 12.4477 12.1628 13C12.1628 13.5523 11.715 14 11.1628 14H8.49609C7.94381 14 7.49609 13.5523 7.49609 13Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 5C7.49609 4.44772 7.94381 4 8.49609 4H11.1628C11.715 4 12.1628 4.44772 12.1628 5C12.1628 5.55228 11.715 6 11.1628 6H8.49609C7.94381 6 7.49609 5.55228 7.49609 5Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 2.33316C7.49609 1.78088 7.94381 1.33316 8.49609 1.33316H12.4961C13.0484 1.33316 13.4961 1.78088 13.4961 2.33316C13.4961 2.88545 13.0484 3.33316 12.4961 3.33316H8.49609C7.94381 3.33316 7.49609 2.88545 7.49609 2.33316Z" />
+                  </svg>
+                  <span>Compare</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_remove" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M0.466759 0.466454C0.662021 0.271192 0.978604 0.271192 1.17387 0.466454L7.53387 6.82646C7.72913 7.02172 7.72913 7.3383 7.53387 7.53356C7.3386 7.72882 7.02202 7.72882 6.82676 7.53356L0.466759 1.17356C0.271497 0.978298 0.271497 0.661716 0.466759 0.466454Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M7.53387 0.466454C7.72913 0.661716 7.72913 0.978298 7.53387 1.17356L1.17387 7.53356C0.978604 7.72882 0.662021 7.72882 0.466759 7.53356C0.271497 7.3383 0.271497 7.02172 0.466759 6.82646L6.82676 0.466454C7.02202 0.271192 7.3386 0.271192 7.53387 0.466454Z" />
+                  </svg>
+                  <span>Remove</span>
+                </a>
+              </div>
+            </div>
+            <div class="cart-item__main-block">
+              <div class="cart-item__title title-15"><a href="details.html">Product title</a></div>
+              <div class="cart-item__info">
+                <div class="cart-item__info-parameter">Farm:</div>
+                <div class="cart-item__info-value">Tharamis Farm</div>
+                <div class="cart-item__info-parameter">Freshness:</div>
+                <div class="cart-item__info-value">1 day old</div>
+              </div>
+              <div class="cart-item__rating cart-item-rating">
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star"></div>
+              </div>
+            </div>
+            <div class="cart-item__price-block">
+              <div class="cart-item__price-info">
+                <div class="cart-item__price">36.99 <span class="cart-item__currency">USD</span></div>
+                <div class="cart-item__old-price">48.56</div>
+              </div>
+              <div class="cart-item__qty qty qty_normal">
+                <input class="qty__input _digital" type="text" name="form[]" data-value="1" data-error="" autocomplete="off">
+                <div class="qty__selector">
+                  <div class="qty__title _icon-arrow">Pcs</div>
+                  <div class="qty__items" hidden>
+                    <div class="qty__item" data-qty="1">1</div>
+                    <div class="qty__item" data-qty="2">2</div>
+                    <div class="qty__item" data-qty="3">3</div>
+                    <div class="qty__item" data-qty="4">4</div>
+                    <div class="qty__item" data-qty="5">5</div>
+                    <div class="qty__item" data-qty="6">6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-preview__item cart-item">
+            <div class="cart-item__image-block">
+              <a class="cart-item__img _ibg" href="details.html">
+                <picture><source srcset="../../assets/img/b8.webp" type="image/webp"><img src="../../assets/img/b8.jpg" alt="image"></picture>
+              </a>
+              <div class="cart-item__actions">
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_wish" width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" d="M6.65559 1.44501C7.13297 0.967619 7.78045 0.699425 8.45559 0.699425C9.13072 0.699425 9.7782 0.967619 10.2556 1.44501C10.733 1.9224 11.0012 2.56988 11.0012 3.24501C11.0012 3.92014 10.733 4.56762 10.2556 5.04501L9.60059 5.70001L6.00059 9.30001L2.40058 5.70001L1.74558 5.04501C1.26819 4.56762 1 3.92014 1 3.24501C1 2.56988 1.26819 1.9224 1.74558 1.44501C2.22297 0.967619 2.87045 0.699425 3.54558 0.699425C4.22072 0.699425 4.86819 0.967619 5.34558 1.44501L6.00059 2.10001L6.65559 1.44501Z" />
+                  </svg>
+                  <span>Wishlist</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_compare" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 2C2.31135 2 2.16211 2.14924 2.16211 2.33333V5C2.16211 5.18409 2.31135 5.33333 2.49544 5.33333H5.16211C5.3462 5.33333 5.49544 5.18409 5.49544 5V2.33333C5.49544 2.14924 5.3462 2 5.16211 2H2.49544ZM0.162109 2.33333C0.162109 1.04467 1.20678 0 2.49544 0H5.16211C6.45077 0 7.49544 1.04467 7.49544 2.33333V5C7.49544 6.28866 6.45077 7.33333 5.16211 7.33333H2.49544C1.20678 7.33333 0.162109 6.28866 0.162109 5V2.33333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M2.49544 10C2.31135 10 2.16211 10.1492 2.16211 10.3333V13C2.16211 13.1841 2.31135 13.3333 2.49544 13.3333H5.16211C5.3462 13.3333 5.49544 13.1841 5.49544 13V10.3333C5.49544 10.1492 5.3462 10 5.16211 10H2.49544ZM0.162109 10.3333C0.162109 9.04467 1.20678 8 2.49544 8H5.16211C6.45077 8 7.49544 9.04467 7.49544 10.3333V13C7.49544 14.2887 6.45077 15.3333 5.16211 15.3333H2.49544C1.20678 15.3333 0.162109 14.2887 0.162109 13V10.3333Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 10.3332C7.49609 9.78088 7.94381 9.33316 8.49609 9.33316H12.4961C13.0484 9.33316 13.4961 9.78088 13.4961 10.3332C13.4961 10.8854 13.0484 11.3332 12.4961 11.3332H8.49609C7.94381 11.3332 7.49609 10.8854 7.49609 10.3332Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 13C7.49609 12.4477 7.94381 12 8.49609 12H11.1628C11.715 12 12.1628 12.4477 12.1628 13C12.1628 13.5523 11.715 14 11.1628 14H8.49609C7.94381 14 7.49609 13.5523 7.49609 13Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 5C7.49609 4.44772 7.94381 4 8.49609 4H11.1628C11.715 4 12.1628 4.44772 12.1628 5C12.1628 5.55228 11.715 6 11.1628 6H8.49609C7.94381 6 7.49609 5.55228 7.49609 5Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#E6704B" d="M7.49609 2.33316C7.49609 1.78088 7.94381 1.33316 8.49609 1.33316H12.4961C13.0484 1.33316 13.4961 1.78088 13.4961 2.33316C13.4961 2.88545 13.0484 3.33316 12.4961 3.33316H8.49609C7.94381 3.33316 7.49609 2.88545 7.49609 2.33316Z" />
+                  </svg>
+                  <span>Compare</span>
+                </a>
+                <a class="cart-item__action" href="#">
+                  <svg class="cart-item__action-img cart-item__action-img_remove" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M0.466759 0.466454C0.662021 0.271192 0.978604 0.271192 1.17387 0.466454L7.53387 6.82646C7.72913 7.02172 7.72913 7.3383 7.53387 7.53356C7.3386 7.72882 7.02202 7.72882 6.82676 7.53356L0.466759 1.17356C0.271497 0.978298 0.271497 0.661716 0.466759 0.466454Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#151515" d="M7.53387 0.466454C7.72913 0.661716 7.72913 0.978298 7.53387 1.17356L1.17387 7.53356C0.978604 7.72882 0.662021 7.72882 0.466759 7.53356C0.271497 7.3383 0.271497 7.02172 0.466759 6.82646L6.82676 0.466454C7.02202 0.271192 7.3386 0.271192 7.53387 0.466454Z" />
+                  </svg>
+                  <span>Remove</span>
+                </a>
+              </div>
+            </div>
+            <div class="cart-item__main-block">
+              <div class="cart-item__title title-15"><a href="details.html">Product title</a></div>
+              <div class="cart-item__info">
+                <div class="cart-item__info-parameter">Farm:</div>
+                <div class="cart-item__info-value">Tharamis Farm</div>
+                <div class="cart-item__info-parameter">Freshness:</div>
+                <div class="cart-item__info-value">1 day old</div>
+              </div>
+              <div class="cart-item__rating cart-item-rating">
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star cart-item-rating__star_active"></div>
+                <div class="cart-item-rating__star"></div>
+              </div>
+            </div>
+            <div class="cart-item__price-block">
+              <div class="cart-item__price-info">
+                <div class="cart-item__price">36.99 <span class="cart-item__currency">USD</span></div>
+                <div class="cart-item__old-price">48.56</div>
+              </div>
+              <div class="cart-item__qty qty qty_normal">
+                <input class="qty__input _digital" type="text" name="form[]" data-value="1" data-error="" autocomplete="off">
+                <div class="qty__selector">
+                  <div class="qty__title _icon-arrow">Pcs</div>
+                  <div class="qty__items" hidden>
+                    <div class="qty__item" data-qty="1">1</div>
+                    <div class="qty__item" data-qty="2">2</div>
+                    <div class="qty__item" data-qty="3">3</div>
+                    <div class="qty__item" data-qty="4">4</div>
+                    <div class="qty__item" data-qty="5">5</div>
+                    <div class="qty__item" data-qty="6">6</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-preview__subtotal">
+          <div class="cart-preview__label">Subtotal</div>
+          <div class="cart-preview__coast">147.96‬ <span>USD</span></div>
+        </div>
+        <div class="cart-preview__bottomline">
+          <a class="cart-preview__btn cart-preview__btn_continue btn btn_normal btn_white" href="#">Continue shopping</a>
+          <a class="cart-preview__btn cart-preview__btn_checkout btn btn_normal btn_green" href="order.html">Go to Checkout</a>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <div class="menu">
+        <nav class="menu__body">
+          <ul class="menu__list" data-spollers="768,max">
+            <li style="padding-right: 10px; color: #6a983c;">Catalog:</li>
+            <app-category *ngFor="let cat of category" [category]="cat"></app-category>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>

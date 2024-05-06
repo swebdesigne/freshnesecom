@@ -1,0 +1,17 @@
+<div class="page__headline page-headline">
+    <div class="page-headline__breadcrumbs breadcrumbs">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a class="breadcrumbs__link" routerLink="/">Homepage</a></li>
+            <div *ngFor="let br of brc">
+                <li class="breadcrumbs__item" >
+                    <a class="breadcrumbs__link" *ngIf="br.id !== categoryId" 
+                    routerLink="/{{directive}}/{{br.id}}"
+                    >
+                    {{br.name}}
+                </a>
+                </li>
+                <li class="breadcrumbs__item" *ngIf="br.id === categoryId">{{br.name}}</li>
+            </div>
+        </ul>
+    </div>
+</div>
