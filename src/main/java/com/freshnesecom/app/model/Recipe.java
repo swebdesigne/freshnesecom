@@ -1,6 +1,5 @@
 package com.freshnesecom.app.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,12 +13,7 @@ public class Recipe {
 	private Long id;
 	private String name;
 	private String description;
-
-	@OneToMany(mappedBy = "recipeId", cascade = CascadeType.ALL)
+	@OneToMany
+	@JoinColumn(name = "recipe_id")
 	private List<Ingredient> ingredient;
-
-	@OneToOne
-	@JsonBackReference
-	@JoinColumn(name = "item_id", referencedColumnName = "id")
-	private Item item;
 }

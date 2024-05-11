@@ -22,6 +22,7 @@ public class Item {
 	private Long customOrder;
 	@ToString.Exclude
 	@JsonManagedReference
-	@OneToOne(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.ALL})
+	@JoinColumn(name = "recipe_id")
 	private Recipe recipe;
 }

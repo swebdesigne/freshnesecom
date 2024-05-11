@@ -1,47 +1,187 @@
 --liquibase formatted sql
 
 --changeset ISivolobov:1
-create table if not exists Item (
-   id bigserial primary key,
-   category_id bigint references category(id),
-   header  varchar unique not null,
-   img varchar,
-   price decimal not null,
-   description text not null,
-   parameters text not null,
-   custom_order bigint not null
+CREATE TABLE recipe (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT
 );
 
--- Пример добавления товаров к категории Bakery (id = 1)
 --changeset ISivolobov:2
-INSERT INTO Item (category_id, header, img, price, description, parameters, custom_order)
-VALUES
-    (1, 'Baguette', 'https://avatars.mds.yandex.net/get-pdb/1766476/06091538-049c-4a7d-bf8a-238765b7a82c/s1200', 2.99, 'Freshly baked baguette', 'Size: 30cm', 1),
-    (1, 'Croissant', 'https://avatars.mds.yandex.net/get-pdb/961248/5d56a454-fab3-4c64-9329-9f119d1972ae/s1200', 1.99, 'Buttery croissant', 'Size: Large', 2),
-    (1, 'Sourdough Bread', 'https://avatars.mds.yandex.net/get-pdb/2889911/9862b95e-3480-4872-b5b8-3b493f80745c/s1200', 3.49, 'Artisan sourdough loaf', 'Size: 500g', 3),
-    (1, 'Whole Grain Bread', 'https://avatars.mds.yandex.net/get-pdb/2889911/079eae8f-4aa4-4e17-b0d0-07ac23a5cb66/s1200', 3.99, 'Healthy whole grain bread', 'Size: 800g', 4),
-    (1, 'Brioche', 'https://avatars.mds.yandex.net/get-pdb/2889911/3b892e06-7dcb-429a-ba24-51ba2cb50c04/s1200', 2.49, 'Sweet brioche bun', 'Size: Medium', 5),
-    (1, 'Bagel', 'https://avatars.mds.yandex.net/get-pdb/2476423/58a2c0ff-6fa7-4c81-9c18-f8b7d8d2263d/s1200', 1.79, 'Classic bagel', 'Size: Plain', 6),
-    (1, 'Ciabatta', 'https://avatars.mds.yandex.net/get-pdb/1578316/4ad8b1e7-8158-4c39-98cf-308138cb1615/s1200', 2.99, 'Italian ciabatta bread', 'Size: Rustic', 7),
-    (1, 'Pretzel', 'https://avatars.mds.yandex.net/get-pdb/2006144/91d2b722-777a-4ab4-b891-7c3e2b136d19/s1200', 1.89, 'Salted pretzel', 'Size: Large', 8),
-    (1, 'Focaccia', 'https://avatars.mds.yandex.net/get-pdb/2476423/9b5a8f57-956b-42a1-bc56-b7fece21da76/s1200', 3.29, 'Herb-infused focaccia', 'Size: Family', 9),
-    (1, 'Cinnamon Roll', 'https://avatars.mds.yandex.net/get-pdb/2476423/682d0c3e-4a7b-464e-89a2-6b2a57eeb791/s1200', 2.49, 'Sweet cinnamon roll', 'Size: Indulgent', 10);
+CREATE TABLE ingredient (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    value VARCHAR(255) NOT NULL,
+    recipe_id BIGINT REFERENCES recipe(id) ON DELETE CASCADE
+);
 
--- Пример добавления товаров к категории Fruit and vegetables (id = 2)
 --changeset ISivolobov:3
-INSERT INTO Item (category_id, header, img, price, description, parameters, custom_order)
-VALUES
-    (2, 'Carrots from Tomissy Farm', 'https://avatars.mds.yandex.net/get-pdb/1766476/ab6f2cf7-94c2-49d7-b820-5ef36ebeebdb/s1200', 1.49, 'Carrots from Tomissy Farm are one of the best on the market. Tomisso and his family are giving a full love to his Bio products. Tomisso’s carrots are growing on the fields naturally.', 'SKU:76645
-Freshness: 1 days old
-Category: Vegetables
-Buy by: pcs, kgs, box, pack
-Stock: In Stock
-Delivery: in 2 days
-Farm:Grocery Tarm Fields
-Delivery area: Czech republic', 1),
-    (2, 'Oranges', 'https://avatars.mds.yandex.net/get-pdb/1578316/f179db46-c2bb-43d8-9730-c681252a3d57/s1200', 1.29, 'Juicy oranges', 'Type: Valencia', 2),
-    (2, 'Carrots', 'https://avatars.mds.yandex.net/get-pdb/2006144/14ef79d7-6749-4a8a-bef2-c6c87e398e42/s1200', 0.99, 'Organic carrots', 'Type: Baby', 3),
-    (2, 'Tomatoes', 'https://avatars.mds.yandex.net/get-pdb/2476423/da80134b-ec39-40db-bb9b-c04d4ea38d94/s1200', 1.79, 'Ripe tomatoes', 'Type: Vine-ripened', 4),
-    (2, 'Bananas', 'https://avatars.mds.yandex.net/get-pdb/1766476/9fc1075d-457e-41f5-94cf-3099fd2e3f4b/s1200', 1.69, 'Yellow bananas', 'Type: Cavendish', 5),
-    (2, 'Broccoli', 'https://avatars.mds.yandex.net/get-pdb/1578316/05adcd30-44ba-42ed-982e-b22ae3eef7d1/s1200', 1.99, 'Fresh broccoli florets', 'Type: Green', 6),
-    (2, 'Spinach', 'https://avatars.mds.yandex.net/get-pdb/2006144/febc63b4-2161-4b25-ba3a-9bc515ec22ec/s1200', 2.29, 'Organic spinach leaves', 'Type: Baby', 7)
+-- Рецепт для item с id = 1
+INSERT INTO recipe (name, description) VALUES ('Baguette Recipe', 'Recipe for freshly baked baguette');
+
+-- Рецепт для item с id = 2
+INSERT INTO recipe (name, description) VALUES ('Croissant Recipe', 'Recipe for buttery croissant');
+
+-- Рецепт для item с id = 3
+INSERT INTO recipe (name, description) VALUES ('Sourdough Bread Recipe', 'Recipe for artisan sourdough loaf');
+
+-- Рецепт для item с id = 4
+INSERT INTO recipe (name, description) VALUES ('Whole Grain Bread Recipe', 'Recipe for healthy whole grain bread');
+
+-- Рецепт для item с id = 5
+INSERT INTO recipe (name, description) VALUES ('Brioche Recipe','Recipe for sweet brioche bun');
+
+-- Рецепт для item с id = 6
+INSERT INTO recipe (name, description) VALUES ('Bagel Recipe', 'Recipe for classic bagel');
+
+-- Рецепт для item с id = 7
+INSERT INTO recipe (name, description) VALUES ('Ciabatta Recipe', 'Recipe for Italian ciabatta bread');
+
+-- Рецепт для item с id = 8
+INSERT INTO recipe (name, description) VALUES ('Pretzel Recipe', 'Recipe for salted pretzel');
+
+-- Рецепт для item с id = 9
+INSERT INTO recipe (name, description) VALUES ('Focaccia Recipe', 'Recipe for herb-infused focaccia');
+
+-- Рецепт для item с id = 10
+INSERT INTO recipe (name, description) VALUES ('Cinnamon Roll Recipe', 'Recipe for sweet cinnamon roll');
+
+-- Рецепт для item с id = 11
+INSERT INTO recipe (name, description) VALUES ('Carrots Recipe', 'Recipe for fresh carrots');
+
+-- Рецепт для item с id = 12
+INSERT INTO recipe (name, description) VALUES ('Oranges Recipe', 'Recipe for juicy oranges');
+
+-- Рецепт для item с id = 13
+INSERT INTO recipe (name, description) VALUES ('Tomatoes Recipe', 'Recipe for ripe tomatoes');
+
+-- Рецепт для item с id = 14
+INSERT INTO recipe (name,  description) VALUES ('Bananas Recipe', 'Recipe for yellow bananas');
+
+-- Рецепт для item с id = 15
+INSERT INTO recipe (name, description) VALUES ('Broccoli Recipe', 'Recipe for fresh broccoli florets');
+
+-- Рецепт для item с id = 16
+INSERT INTO recipe (name, description) VALUES ('Spinach Recipe', 'Recipe for tender spinach leaves');
+
+-- Рецепт для item с id = 17
+INSERT INTO recipe (name, description) VALUES ('Potatoes Recipe', 'Recipe for delicious potatoes');
+
+--changeset ISivolobov:4
+-- Ингредиенты для рецепта с id = 1 (Baguette Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '500g', 1);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '300ml', 1);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '10g', 1);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '7g', 1);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Olive oil', '30ml', 1);
+
+-- Ингредиенты для рецепта с id = 2 (Croissant Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Butter', '200g', 2);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '100g', 2);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '300g', 2);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Egg', '1', 2);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '5g', 2);
+
+-- Ингредиенты для рецепта с id = 3 (Sourdough Bread Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Whole wheat flour', '600g', 3);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '10g', 3);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '400ml', 3);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '15g', 3);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Olive oil', '50ml', 3);
+
+-- Ингредиенты для рецепта с id = 4 (Whole Grain Bread Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Whole grain flour', '700g', 4);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Honey', '50g', 4);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '450ml', 4);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '10g', 4);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '8g', 4);
+
+-- Ингредиенты для рецепта с id = 5 (Brioche Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Eggs', '3', 5);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '100g', 5);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Butter', '150g', 5);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '400g', 5);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '5g', 5);
+-- Ингредиенты для рецепта с id = 6 (Whole Grain Bread Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Whole grain flour', '700g', 6);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Honey', '50g', 6);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '450ml', 6);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '10g', 6);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '8g', 6);
+
+-- Ингредиенты для рецепта с id = 7 (Brioche Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Eggs', '3', 7);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '100g', 7);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Butter', '150g', 7);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '400g', 7);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '5g', 7);
+
+-- Ингредиенты для рецепта с id = 8 (Ciabatta Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Bread flour', '500g', 8);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '350ml', 8);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '10g', 8);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '12g', 8);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Olive oil', '30ml', 8);
+
+-- Ингредиенты для рецепта с id = 9 (Pretzel Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('All-purpose flour', '300g', 9);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '250ml', 9);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '8g', 9);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '10g', 9);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Baking soda', '30g', 9);
+
+-- Ингредиенты для рецепта с id = 10 (Focaccia Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Bread flour', '400g', 10);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '300ml', 10);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Olive oil', '50ml', 10);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '10g', 10);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Rosemary', '2 sprigs', 10);
+
+-- Ингредиенты для рецепта с id = 11 (Cinnamon Roll Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Butter', '100g', 11);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '150g', 11);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Cinnamon', '10g', 11);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '300g', 11);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yeast', '5g', 11);
+
+-- Ингредиенты для рецепта с id = 12 (Carrots Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Carrots', '500g', 12);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Butter', '50g', 12);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '30g', 12);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '5g', 12);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Pepper', '2g', 12);
+
+-- Ингредиенты для рецепта с id = 13 (Orange Juice Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Oranges', '5', 13);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Sugar', '50g', 13);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Water', '200ml', 13);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Ice cubes', '5', 13);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Mint leaves', '10', 13);
+
+-- Ингредиенты для рецепта с id = 14 (Tomato Soup Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Tomatoes', '1kg', 14);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Onion', '1', 14);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Garlic', '2 cloves', 14);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Vegetable broth', '500ml', 14);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Cream', '100ml', 14);
+
+-- Ингредиенты для рецепта с id = 15 (Banana Smoothie Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Bananas', '3', 15);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Milk', '300ml', 15);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Yogurt', '150ml', 15);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Honey', '30g', 15);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Ice cubes', '5', 15);
+
+-- Ингредиенты для рецепта с id = 16 (Broccoli Salad Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Broccoli', '300g', 16);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Cherry tomatoes', '200g', 16);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Red onion', '1', 16);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Feta cheese', '100g', 16);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Balsamic vinegar', '50ml', 16);
+
+-- Ингредиенты для рецепта с id = 17 (Spinach Pasta Recipe)
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Spinach', '200g', 17);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Flour', '300g', 17);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Eggs', '2', 17);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Olive oil', '30ml', 17);
+INSERT INTO ingredient (name, value, recipe_id) VALUES ('Salt', '8g', 17);
