@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BreadCrumbsRepository extends CrudRepository<Category, Long> {
+public interface BreadCrumbRepository extends CrudRepository<Category, Long> {
 }

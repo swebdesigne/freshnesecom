@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Component
-public class BreadCrumbsConverter implements Converter<Category, List<BreadCrumbs>> {
+public class BreadCrumbConverter implements Converter<Category, List<BreadCrumbs>> {
 	private final Set<BreadCrumbs> breadCrumbs = new HashSet<>();
 
 	public List<BreadCrumbs> fromTo(Category obj) {
