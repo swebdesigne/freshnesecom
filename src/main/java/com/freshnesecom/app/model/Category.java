@@ -35,10 +35,4 @@ public class Category implements Serializable {
 	@Column(name = "header")
 	private String name;
 	private int customOrder;
-
-//	@OneToMany
-//	@JoinColumn(
-//			name = "category_id"
-//	)
-//	List<Item> items = new ArrayList<>();
 }
