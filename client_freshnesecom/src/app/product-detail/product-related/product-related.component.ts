@@ -1,6 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Params, RouterLink } from '@angular/router';
-import { Router } from 'express';
 import { ProductService } from '../product.service';
 import { ProductModule } from '../product.module';
 import { CommonModule } from '@angular/common';
@@ -15,18 +14,18 @@ import { ProductRelatedModule } from './product-related.module';
 })
 export class ProductRelatedComponent implements OnInit, OnChanges {
   product: ProductRelatedModule[] = [];
-  
+
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-  ) {}
+  ) { }
 
-  ngOnChanges (changes: SimpleChanges): void {
+  ngOnChanges(changes: SimpleChanges): void {
   }
-  
-  ngOnInit (): void {
+
+  ngOnInit(): void {
     this.activatedRoute.params.subscribe((params: Params) => {
-      const randomArray:number[] = [];
+      const randomArray: number[] = [];
       for (let i = 0; i < 4; i++) {
         const randomNumber = Math.floor(Math.random() * (17 - 1 + 1)) + 1;
         randomArray.push(randomNumber);

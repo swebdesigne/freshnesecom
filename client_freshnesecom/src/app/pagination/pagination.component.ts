@@ -19,7 +19,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   activeElement = 1;
 
   constructor(private route: ActivatedRoute) {}
-  
+
 
   ngOnInit (): void {
     this.route.queryParams.subscribe(param => {
@@ -32,8 +32,8 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   private updatePagination() {
-    const pages = Math.floor(this.count) / 3;
-    const pageCount = pages % 2 === 0 ? pages : pages + 1;
+    const pages = Math.round(this.count / 3);
+    const pageCount = this.count % 3 === 0 ? pages : pages + 1;
     this.size = Array.from({ length: pageCount }, (_, i) => i);
   }
 }

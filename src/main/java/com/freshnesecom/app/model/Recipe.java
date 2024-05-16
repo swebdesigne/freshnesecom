@@ -13,7 +13,7 @@ public class Recipe {
 	private Long id;
 	private String name;
 	private String description;
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.ALL})
 	@JoinColumn(name = "recipe_id")
 	private List<Ingredient> ingredient;
 }

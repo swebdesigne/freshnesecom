@@ -15,9 +15,9 @@ export class CategoryService {
     return this.http.get(this.host);
   }
 
-  findById(id:number, page:number): Observable<any> {
-    if(page >= 0) this.pagination = "?page="+page;
-    return this.http.get(this.host+"/"+id+this.pagination);
+  findById(id: number, page: number): Observable<any> {
+    if (page >= 0) this.pagination = "?page=" + page;
+    return this.http.get(this.host + "/" + id + this.pagination);
   }
 
 }

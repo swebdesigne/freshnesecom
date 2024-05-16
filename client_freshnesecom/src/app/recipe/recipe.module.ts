@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IngredientModule } from '../ingredient/ingredient.module';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {IngredientModule} from '../ingredient/ingredient.module';
 
 
 @NgModule({
@@ -10,9 +9,9 @@ import { IngredientModule } from '../ingredient/ingredient.module';
     CommonModule
   ]
 })
-export class RecipeModule { 
+export class RecipeModule {
   id: number;
-	name: string;
-	description: string;
-	ingredient: IngredientModule[];
+  name: string;
+  description: string;
+  ingredient: IngredientModule[];
 }

@@ -29,11 +29,10 @@ public class CategoryService {
 	public Optional<CategoryWithItemDto> findById(Long id, Pageable pageable) {
 		final var categoryWithItemDto = categoryRepository.findById(id).map(categoryConverter::fromTo);
 		categoryWithItemDto.ifPresent((cat) -> {
-					final long catId = cat.getId();
-					cat.setCountItems(itemService.getCountById(catId));
-					cat.setItems(itemService.findByCategoryId(catId, pageable));
-				}
-		);
+			final long catId = cat.getId();
+			cat.setCountItems(itemService.getCountById(catId));
+			cat.setItems(itemService.findByCategoryId(catId, pageable));
+		});
 		return categoryWithItemDto;
 	}
 }

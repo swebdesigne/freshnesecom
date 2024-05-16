@@ -1,12 +1,14 @@
 package com.freshnesecom.app.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +23,7 @@ public class Item {
 	private String parameters;
 	private Long customOrder;
 	@ToString.Exclude
-	@JsonManagedReference
-	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.ALL })
 	@JoinColumn(name = "recipe_id")
 	private Recipe recipe;
 }
