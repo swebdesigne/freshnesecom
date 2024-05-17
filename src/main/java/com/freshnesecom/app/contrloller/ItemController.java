@@ -1,20 +1,17 @@
 package com.freshnesecom.app.contrloller;
 
-import java.util.Arrays;
-import java.util.List;
-
-import org.springframework.context.annotation.Role;
+import com.freshnesecom.app.model.Item;
+import com.freshnesecom.app.service.ItemService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import com.freshnesecom.app.model.Item;
-import com.freshnesecom.app.service.ItemService;
+import java.util.Arrays;
+import java.util.List;
 
-import lombok.AllArgsConstructor;
-
-//@CrossOrigin
+@CrossOrigin
 @RestController
 @AllArgsConstructor
 @RequestMapping(path = "/product")
@@ -22,7 +19,7 @@ import lombok.AllArgsConstructor;
 public class ItemController {
 	private ItemService itemService;
 
-	@GetMapping(value = "/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<Item> getItem(@PathVariable Long id) {
 		return ResponseEntity.of(itemService.findById(id));
 	}
@@ -30,7 +27,6 @@ public class ItemController {
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Item> add(@RequestBody Item item) {
-		System.out.println(item);
 		return ResponseEntity.of(itemService.add(item));
 	}
 

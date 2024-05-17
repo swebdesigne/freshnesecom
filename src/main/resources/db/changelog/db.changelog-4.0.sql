@@ -4,9 +4,9 @@
 create table if not exists Users (
    id bigserial primary key,
    username char(30) not null unique ,
-   email char(30) not null unique,
+   email char(30) unique,
    password VARCHAR(128) not null,
-   role char(10) not null
+   role char(10) DEFAULT 'USER'
 );
 
 --changeset ISivolobov:2

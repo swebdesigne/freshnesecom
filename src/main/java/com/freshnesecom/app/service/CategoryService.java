@@ -26,7 +26,7 @@ public class CategoryService {
 	}
 
 	@Transactional
-	public Optional<CategoryWithItemDto> findById(Long id, Pageable pageable) {
+	public Optional<CategoryWithItemDto> findByIdWithItem(Long id, Pageable pageable) {
 		final var categoryWithItemDto = categoryRepository.findById(id).map(categoryConverter::fromTo);
 		categoryWithItemDto.ifPresent((cat) -> {
 			final long catId = cat.getId();

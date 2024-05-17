@@ -1,0 +1,44 @@
+#0 @title GET PRODUCT BY ID
+GET http://localhost:8080/product/1
+
+#1 @title ADD PRODUCT 
+POST http://localhost:8080/product
+Content-Type: application/json
+{
+    "categoryId": 1,
+    "name": "Baguette2",
+    "price": 3.99,
+    "description": "Freshly baked baguette",
+    "img": "https://avatars.mds.yandex.net/get-pdb/1766476/06091538-049c-4a7d-bf8a-238765b7a82c/s1200",
+    "parameters": "Size: 30cm",
+    "customOrder": 1,
+    "recipe": {
+        "name": "Baguette Recipe",
+        "description": "Recipe for freshly baked baguette",
+        "ingredient": [
+            {
+                "name": "Flour",
+                "value": "500g"
+            },
+            {
+                "name": "Water",
+                "value": "300ml"
+            },
+            {
+                "name": "Salt",
+                "value": "10g"
+            },
+            {
+                "name": "Yeast",
+                "value": "7g"
+            },
+            {
+                "name": "Olive oil",
+                "value": "30ml"
+            }
+        ]
+    }
+}
+
+#3 @title DELETE PRODUCT BY ID
+DELETE http://localhost:8080/product/1

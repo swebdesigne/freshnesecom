@@ -24,10 +24,10 @@ public class CategoryController {
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<CategoryWithItemDto> getCategory(
+	public ResponseEntity<CategoryWithItemDto> getCategoryWithItem(
 			@PathVariable Long id,
 			@PageableDefault(value = 3, page = 0) Pageable pageable
 	) {
-		return ResponseEntity.of(categoryService.findById(id, pageable));
+		return ResponseEntity.of(categoryService.findByIdWithItem(id, pageable));
 	}
 }

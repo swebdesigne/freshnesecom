@@ -1,0 +1,25 @@
+#login {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#login form {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+#login form input {
+  border: 1px solid grey;
+  margin-bottom: 5px;
+}
+
+#login form.open {
+  position: absolute;
+  border: 1px solid gray;
+  width: 100%;
+  display: block;
+  padding: 10px 5px;
+  right: 0;
+  z-index: 999;
+}
+

@@ -1,0 +1,2 @@
+#0 @title GET ALL CATEGORY
+GET http://localhost:8080/category
